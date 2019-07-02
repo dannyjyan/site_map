@@ -1,0 +1,35 @@
+<!--JavaScript - Print All Links (Hyperlinks) with HREF Attribute, Total Number of Links in a Page.-->
+<html>
+	<head>
+		<title>JavaScript - Print All Links (Hyperlinks) with HREF Attribute, Total Number of Links in a Page.</title>
+		<!--Example CSS-->
+		<link href="ExampleStyle.css" type="text/css" rel="stylesheet"/>
+		
+		<script type="text/javascript">
+			function getTotalLinks(){
+				var n=document.links.length;
+				document.getElementById("pLinks").innerHTML="Total number of links: " + n;				
+			}
+			
+			function printAllLinks(){
+				var totalLinks=document.links.length;
+				document.getElementById("pLinks").innerHTML="";
+				for(var i=0;i<totalLinks;i++){
+					document.getElementById("pLinks").innerHTML+=
+						"Link: " + document.links[i].innerHTML +
+						" is linked to: " + document.links[i].href+"<br/>";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>JavaScript - Print All Links (Hyperlinks) with HREF Attribute, Total Number of Links in a Page.</h1>
+		<p>
+			<a href="www.wikihow.com">WikiHow</a>
+			<a href="www.wikipedia.org">wikiPedia</a>
+		</p>		
+		<input type="button" value="Get total links." onclick='getTotalLinks()'/>
+		<input type="button" value="Print All Links." onclick='printAllLinks()'/>
+		<p id="pLinks"></p>
+	</body>
+</html>
